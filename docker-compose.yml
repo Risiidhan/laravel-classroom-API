@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    volumes:
+      - ./cache/mysql:/var/lib/mysql
+      - ./conf-mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: Password
+      MYSQL_ROOT_HOST: localhost
+    restart: unless-stopped
