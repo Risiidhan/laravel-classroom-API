@@ -7,58 +7,34 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# RESTful API with Laravel Eloquent
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This project implements a RESTful API using Laravel's Eloquent ORM. It revolves around three main entities: students, teachers, and courses. The API includes robust validation mechanisms and returns responses in JSON format. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features:
 
-## Learning Laravel
+- **Validation:** Input data is validated using Laravel's built-in validation features to ensure data integrity and consistency.
+- **JSON Responses:** All API responses are in JSON format, making them easily consumable by client applications.
+- **Many-to-Many Relationship:** Students and courses have a many-to-many relationship, allowing a student to be enrolled in multiple courses and a course to have multiple students.
+- **Pagination:** For endpoints that return lists of data, pagination is implemented to manage large datasets efficiently.
+- **One-to-Many Relationship:** A one-to-many relationship exists between teachers and courses, enabling a teacher to have multiple courses while each course belongs to only one teacher.
+- **User Authentication:** Laravel Sanctum is used for user authentication, ensuring that API endpoints are accessible only to authenticated users.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Database Setup
+- MySQL Server with Docker: Docker is utilized to set up a MySQL server, which serves as the backend database for storing student, teacher, and course information.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Requirements
+- Laravel Framework: ^9.11
+- Docker
 
-## Laravel Sponsors
+## Usage:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+To use the API, ensure that you have set up Laravel and configured the necessary database connections. Then, authenticate users using Laravel Sanctum, and start making requests to the various API endpoints to interact with the student, teacher, and course resources.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Clone the repository.
+2. Install dependencies using Composer.
+3. Set up Docker and start the MySQL server.
+4. Configure Laravel Sanctum for user authentication.
+5. Run migrations to create database tables.
+5. Access the API endpoints with proper authentication.
